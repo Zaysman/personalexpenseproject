@@ -61,6 +61,7 @@ public class ExpenseRestController {
 			existingExpense.setDate(expense.getDate());
 			existingExpense.setDescription(expense.getDescription());
 			existingExpense.setUserid(expense.getUserid());
+			expenseService.updateExpense(existingExpense);
 			return existingExpense;
 		} else {
 			return null;

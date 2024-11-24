@@ -2,13 +2,30 @@ package com.isaiah.personalexpensesproject.objects;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.*;
+
+@Entity //Every persisten POJO class is an entity and is declared using the @Entity annotation at class level
+@Table(name = "expenses")
 public class Expense {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "expenseid")
 	private long expenseid;
+	
+	@Column(name = "userid")
 	private long userid;
+	
+	@Column(name = "amount")
 	private float amount;
+	
+	@Column(name = "date")
 	private LocalDate date;
+	
+	@Column(name = "category")
 	private String category;
+	
+	@Column(name = "description")
 	private String description;
 	
 	
