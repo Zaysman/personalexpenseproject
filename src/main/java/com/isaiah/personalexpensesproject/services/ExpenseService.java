@@ -45,4 +45,9 @@ public class ExpenseService {
 		expenseRepository.deleteById(expenseid);
 	}
 	
+	@Transactional
+	public void deleteExpensesByExpenseidIn(List<Long> expenseids) {
+		expenseRepository.deleteByExpenseidIn(expenseids);
+	}
+	
 }

@@ -75,6 +75,13 @@ public class ExpenseRestController {
 		expenseService.deleteExpenseByExpenseid(expenseid);
 	}
 	
+	//Delete expense by list of ids.
+	@DeleteMapping(value = "/delete/expenses", consumes = JSON)
+	@CrossOrigin(origins = LOCALHOST)
+	public void deleteExpense(@RequestBody List<Long> expenseids) {
+		expenseService.deleteExpensesByExpenseidIn(expenseids);
+	}
+	
 	
 	
 }

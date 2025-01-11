@@ -15,7 +15,6 @@ public class PersonalexpensesprojectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PersonalexpensesprojectApplication.class, args);
 		
-		
 	}
 
 }

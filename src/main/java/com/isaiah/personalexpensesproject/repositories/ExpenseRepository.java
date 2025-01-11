@@ -24,6 +24,7 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
 	//delete operations
 	void deleteByexpenseid(long id);
 	void delete(Expense expense);
+	void deleteByExpenseidIn(List<Long> expenseids);
 	
 	
 }
