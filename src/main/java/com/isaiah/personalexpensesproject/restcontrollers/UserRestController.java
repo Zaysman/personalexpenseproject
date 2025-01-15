@@ -73,10 +73,5 @@ public class UserRestController {
 	public void deleteUser(@PathVariable long userid) {
 		userService.deleteUserByUserid(userid);
 	}
-	
-	
-	
-	
-	
 
 }
