@@ -1,7 +1,11 @@
 package com.isaiah.personalexpensesproject.restcontrollers;
 
 import com.isaiah.personalexpensesproject.objects.Expense;
+import com.isaiah.personalexpensesproject.objects.ExpenseSummary;
+import com.isaiah.personalexpensesproject.objects.ExpenseSummaryRequest;
 import com.isaiah.personalexpensesproject.services.ExpenseService;
+
+
 
 import java.util.List;
 
@@ -39,6 +43,13 @@ public class ExpenseRestController {
 	@CrossOrigin(origins = LOCALHOST)
 	public List<Expense> getExpensesByExpenseid(@PathVariable long userid) {
 		return expenseService.readExpensesByUserid(userid);
+	}
+	
+	//Get Summary of Expense for user by userid
+	@GetMapping(value = "/summary", produces = JSON, consumes = JSON)
+	@CrossOrigin(origins = LOCALHOST)
+	public ExpenseSummary getExpenseSummary( @RequestBody ExpenseSummaryRequest request) {
+		return expenseService.getExpenseSummary(request);
 	}
 	
 	//Post create a new Expense
