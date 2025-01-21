@@ -52,6 +52,16 @@ public class ExpenseRestController {
 		return expenseService.getExpenseSummary(request);
 	}
 	
+	//Get Summary of Expense for user by userid with path variables
+	@GetMapping(value = "/summary/userid/{userid}/month/{monthCode}/year/{year}", produces = JSON)
+	@CrossOrigin(origins = LOCALHOST)
+	public ExpenseSummary getExpenseSummary(@PathVariable long userid, @PathVariable int monthCode, @PathVariable int year) {
+		ExpenseSummaryRequest request = new ExpenseSummaryRequest(userid, monthCode, year);
+		return expenseService.getExpenseSummary(request);
+		
+	}
+	
+	
 	//Post create a new Expense
 	@PostMapping(value = "/create", consumes = JSON, produces = JSON)
 	@CrossOrigin(origins = LOCALHOST)
